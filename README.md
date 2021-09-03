@@ -26,3 +26,21 @@ and bash process on the container and expose the websocket on your host port 500
 Feel free to adjust the docker run command to your need, e.g. change the port mapping, but 
 be aware that the desktop app's [configuration file](https://github.com/berttejeda/bert.bill/blob/master/bill.config.yaml.example) must be adjusted to reflect any changes to the way
 the websocket is accessed.
+
+For any given lesson, I will make the assumption that your web 
+terminal connection is ready and accepting connections from your computer.
+
+You'll see plenty of error messages otherwse :)
+
+# How to use these interactive documents
+
+For every lesson, you'll notice that as you scroll down the lesson material,
+a [terminal](https://github.com/xtermjs/xterm.js/) window should appear,
+allowing you the opportunity to practice live commands against a dockerized sandbox.
+
+You need only click a sample commands to send the input directly to the terminal for execution.
+
+This is similar to the experience you get with [Katacoda](https://www.katacoda.com/)
+and [Play with Docker](https://www.docker.com/play-with-docker).
+
+Do read through the commands, do grok them, and do try them out!
