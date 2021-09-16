@@ -1,0 +1,6 @@
+external_configs: []
+topics:
+  ansible:
+    lessons:
+      - name: Lesson-01
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/ansible/lesson-01.md
