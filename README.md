@@ -6,37 +6,24 @@ Bert's Interactive Lesson Loader, the desktop app here
 
 # WebTerminal
 
-Every lesson rendered through the app a web-based terminal emulator component
+Every lesson rendered through the app includes a web-based terminal emulator component
 that allows for practicing the lesson material.
 
 These web terminals are embedded in the user interface, 
 available at its footer and as a slide-in from the right (click Utils to reveal).
 
-The underlying technology for these web terminals is [xterm.js](https://github.com/xtermjs/xterm.js/).
+Please consult the [bert.bill](https://github.com/berttejeda/bert.bill#readme) project for details on architecture and configuration.
 
-As such, the xterm.js component requires a websocket to a bash process.
-
-By default, the bert.bill desktop app will attempt to connect to a local instance of the websocket via _http://127.0.0.1:5000/_.
-
-To get this running locally, you can invoke the docker image I've prepared via: `docker run --rm -it --name aiohttp -p 5000:5000 berttejeda/aiohttp-websocket-bash:1.0.0`
-
-The command above will automatically start the websocket 
-and bash process on the container and expose the websocket on your host port 5000.
-
-Feel free to adjust the docker run command to your need, e.g. change the port mapping, but 
-be aware that the desktop app's [configuration file](https://github.com/berttejeda/bert.bill/blob/master/bill.config.yaml.example) must be adjusted to reflect any changes to the way
-the websocket is accessed.
-
-For any given lesson, I will make the assumption that your web 
+With that said, from here on out I will make the assumption that your web 
 terminal connection is ready and accepting connections from your computer.
 
-You'll see plenty of error messages otherwse :)
+You'll see plenty of error messages otherwise :)
 
 # How to use these interactive documents
 
 For every lesson, you'll notice that as you scroll down the lesson material,
 a [terminal](https://github.com/xtermjs/xterm.js/) window should appear,
-allowing you the opportunity to practice live commands against a dockerized sandbox.
+allowing you the opportunity to practice live commands against a sandboxed environment.
 
 You need only click a sample commands to send the input directly to the terminal for execution.
 
