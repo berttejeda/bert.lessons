@@ -124,7 +124,7 @@ Let's create some of these, as Follows:
 
 - Create a folder for your playbook:<br />
   `mkdir -p sandbox`
-- Create a playbook under this path named **hello.yaml**
+- Create a playbook under this path named **hello.yaml**<br />
   `touch sandbox/hello.yaml`
 - Add the playbook definition with a single debug task:<br />
 
