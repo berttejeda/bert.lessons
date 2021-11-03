@@ -1,20 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](newtab+https://github.com/thlorenz/doctoc)*
-
-- [Forward](#forward)
-- [The Web Terminal](#the-web-terminal)
-- [What This Lab Covers](#what-this-lab-covers)
-- [What is Ansible?](#what-is-ansible)
-  - [Terminology](#terminology)
-- [Installing Ansible](#installing-ansible)
-  - [Debian Systems](#debian-systems)
-  - [RHEL Systems](#rhel-systems)
-- [Writing ansible playbooks](#writing-ansible-playbooks)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-<a name="forward"></a>
 ## Forward
 
 Thank you for taking the time to read through 
@@ -23,7 +6,6 @@ this interactive document, this being the first of 3 parts.
 I hope these hands-on, interactive lessons can reduce the startup 
 cost of learning and eventually mastering Ansible.
 
-<a name="the-web-terminal"></a>
 ## The Web Terminal
 
 If you want to take advantage of the interactive and hands-on nature of these labs,
@@ -35,7 +17,6 @@ Instructions for that can be found in this repo's [README](newtab+../README.md).
 From here on, I will make the assumption that your web terminal 
 connection is ready and accepting connections from your computer.
 
-<a name="what-this-lab-covers"></a>
 ## What This Lab Covers
 
 Here's what I will cover for Lab 1 of this Ansible tutorial series:
@@ -46,7 +27,6 @@ Here's what I will cover for Lab 1 of this Ansible tutorial series:
 
 Let's begin.
 
-<a name="what-is-ansible"></a>
 ## What is Ansible?
 
 Ansible is a simple yet powerful tool for configuration management and orchestration of your infrastructure. 
@@ -63,7 +43,6 @@ In a nutshell, [Ansible](newtab+https://www.ansible.com/):
 - Is much, much easier to rapidly develop and manage, since its automation is (mostly) defined using [yaml](newtab+https://yaml.org/)
 - Lends itself to [self-documenting development](newtab+https://en.wikipedia.org/wiki/Self-documenting_code)
 
-<a name="terminology"></a>
 ### Terminology
 
 Throughout the sections ahead, I'll make reference to the following ansible terms:
@@ -80,8 +59,6 @@ For more information on ansible terms, consult the [Ansible Glossary](newtab+htt
 
 Let's go over installing Ansible
 
-[Back to Top](#top)
-<a name="installing-ansible"></a>
 ## Installing Ansible
 
 ### Alpine Systems
@@ -99,7 +76,6 @@ sudo apt-get -y install python-pip
 sudo pip install ansible cryptography
 </pre>
 
-<a name="rhel-systems"></a>
 ### RHEL Systems
 
 Installation on *CentOS 8.x*, *Oracle Enterprise Linux 8.x*
@@ -114,8 +90,6 @@ In the next sections, we'll cover writing and launching ansible playbooks.
 My editor of choice is [Sublime 3 Text Editor](newtab+https://www.sublimetext.com/3), 
 but we'll be using `vi` throughout this lab.
 
-[Back to Top](#top)
-<a name="writing-ansible-playbooks"></a>
 ## Writing ansible playbooks
 
 The fun starts when you learn your way around ansible [playbooks](newtab+https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html)!
@@ -153,5 +127,3 @@ Lesson-02 will cover:
 - Templates and Handlers
 - Variables & Facts
 - Task Blocks
-
-[Back to Top](#top)
