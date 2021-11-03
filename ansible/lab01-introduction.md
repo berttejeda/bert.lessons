@@ -1,23 +1,23 @@
-## Forward
+# Forward
 
 Thank you for taking the time to read through 
-this interactive document, this being the first of 3 parts.
+this interactive document; this being the first of 3 parts.
 
 I hope these hands-on, interactive lessons can reduce the startup 
-cost of learning and eventually mastering Ansible.
+cost of learning and eventually mastering [Ansible](newtab+https://www.ansible.com/).
 
-## The Web Terminal
+# The Web Terminal
 
 If you want to take advantage of the interactive and hands-on nature of these labs,
 you'll need to either already have a web terminal connection available or fire one up 
 yourself.
 
-Instructions for that can be found in this repo's [README](newtab+../README.md).
+Instructions for that can be found in this repo's [README](newtab+https://raw.githubusercontent.com/berttejeda/bert.lessons/main/README.md).
 
 From here on, I will make the assumption that your web terminal 
 connection is ready and accepting connections from your computer.
 
-## What This Lab Covers
+# What This Lab Covers
 
 Here's what I will cover for Lab 1 of this Ansible tutorial series:
 
@@ -27,7 +27,7 @@ Here's what I will cover for Lab 1 of this Ansible tutorial series:
 
 Let's begin.
 
-## What is Ansible?
+# What is Ansible?
 
 Ansible is a simple yet powerful tool for configuration management and orchestration of your infrastructure. 
 
@@ -43,7 +43,7 @@ In a nutshell, [Ansible](newtab+https://www.ansible.com/):
 - Is much, much easier to rapidly develop and manage, since its automation is (mostly) defined using [yaml](newtab+https://yaml.org/)
 - Lends itself to [self-documenting development](newtab+https://en.wikipedia.org/wiki/Self-documenting_code)
 
-### Terminology
+## Terminology
 
 Throughout the sections ahead, I'll make reference to the following ansible terms:
 
@@ -90,7 +90,7 @@ In the next sections, we'll cover writing and launching ansible playbooks.
 My editor of choice is [Sublime 3 Text Editor](newtab+https://www.sublimetext.com/3), 
 but we'll be using `vi` throughout this lab.
 
-## Writing ansible playbooks
+# Writing ansible playbooks
 
 The fun starts when you learn your way around ansible [playbooks](newtab+https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html)!
 
