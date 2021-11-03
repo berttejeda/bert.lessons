@@ -22,7 +22,7 @@ You'll see plenty of error messages otherwise :)
 # How to use these interactive documents
 
 For every lesson, you'll notice that as you scroll down the lesson material,
-a [terminal](https://github.com/xtermjs/xterm.js/) window should appear,
+a [terminal](https://github.com/xtermjs/xterm.js/) window will appear,
 allowing you the opportunity to practice live commands against a sandboxed environment.
 
 You need only click a sample commands to send the input directly to the terminal for execution.
