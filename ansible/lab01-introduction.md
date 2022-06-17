@@ -61,8 +61,6 @@ Let's go over installing Ansible
 
 ## Installing Ansible
 
-### Alpine Systems
-
 ### Debian Systems
 
 Installation on *Ubuntu* *20.04 LTS*:
@@ -97,9 +95,9 @@ The fun starts when you learn your way around ansible [playbooks](newtab+https:/
 Let's create some of these, as Follows:
 
 - Create a folder for your playbook:<br />
-  `mkdir -p sandbox`
+  <pre class='clickable-code'>mkdir -p sandbox</pre>
 - Create a playbook under this path named **hello.yaml**<br />
-  `touch sandbox/hello.yaml`
+  <pre class='clickable-code'>touch sandbox/hello.yaml</pre>
 - Add the playbook definition with a single debug task:<br />
 
   <pre class='clickable-code'>
@@ -115,7 +113,7 @@ Let's create some of these, as Follows:
   </pre>
 
 - Run the playbook, specifying your inventory as 'localhost':<br />
-  `ansible-playbook -i localhost, sandbox/hello.yaml`
+  <pre class='clickable-code'>ansible-playbook -i localhost, sandbox/hello.yaml</pre>
 
 This concludes lab1. 
 
