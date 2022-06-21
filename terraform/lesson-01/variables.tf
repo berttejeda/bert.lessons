@@ -4,4 +4,3 @@ variable "my_map" {
     "mykey" = "myvar"
   }
 }
-
