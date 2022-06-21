@@ -3,4 +3,8 @@ topics:
   - ansible:
       lessons:
         - name: Introduction
-          url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/ansible/lab01-introduction.md
+          url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/ansible/lesson-01/introduction.md
+  - terraform:
+      lessons:
+        - name: Introduction
+          url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/terraform/lesson-01/introduction.md
