@@ -1,10 +1,10 @@
 external_configs: []
 topics:
-  - ansible:
-      lessons:
-        - name: Introduction
-          url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/ansible/lesson-01/introduction.md
-  - terraform:
-      lessons:
-        - name: Introduction
-          url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/terraform/lesson-01/introduction.md
+  ansible:
+    lessons:
+      - name: Introduction
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/ansible/lesson-01/introduction.md
+  terraform:
+    lessons:
+      - name: Introduction
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/terraform/lesson-01/introduction.md
