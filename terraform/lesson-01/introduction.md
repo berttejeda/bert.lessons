@@ -67,7 +67,7 @@ Pardon the repetition, but the concept needs to be hammered in ...
   configuration code to define your IaC. With configuration code, you can deploy repeatable, 
   ephemeral, consistent environments to vendors on the public, private, and hybrid clouds.
 - Some CM tools can also perform a degree of infrastructure provisioning, 
-  but not as well as Terraform, because this isn’t the task they were originally designed to do. 
+  but not as well as Terraform, because this isn't the task they were originally designed to do. 
   The same can be said the other way around.
 -  The difference between CM and provisioning tools is a matter of philosophy
     - CM tools favor mutable infrastructure, whereas Terraform and other provisioning tools favor immutable infrastructure
@@ -139,13 +139,14 @@ That said, the order of operations for deploying infrastructure via terraform is
 1. Invoke `terraform plan`
 1. Apply the configuration with `terraform apply`
 
-> ℹ️ During the plan or apply phase, terraform concatenates all the .tf files in your workspace into a 
-  single HCL-formatted file, and automatically determines the correct order in which to derive settings and deploy
-  infrastructure
-<hr>
-> ℹ️ From the Terraform [documentation](https://www.terraform.io/cli/commands/plan): The `terraform plan` command creates 
-  an execution plan with a preview of the changes that Terraform will make to your infrastructure.<br />
-  The terraform apply command executes the actions proposed in a Terraform plan.
+???+ note ":information_source:"
+    During the plan or apply phase, terraform concatenates all the .tf files in your workspace into a 
+    single HCL-formatted file, and automatically determines the correct order in which to derive settings and deploy
+    infrastructure
+???+ note ":information_source:" 
+    From the Terraform [documentation](https://www.terraform.io/cli/commands/plan): The `terraform plan` command creates 
+    an execution plan with a preview of the changes that Terraform will make to your infrastructure.<br />
+    The terraform apply command executes the actions proposed in a Terraform plan.
 
 The most straightforward way to use terraform apply is to run it without any arguments at all, in which case it will automatically create a new execution plan (as if you had run terraform plan) and then prompt you to approve that plan, before taking the indicated actions.
 
@@ -153,7 +154,7 @@ Let's put into practice everything discussed so far with the first piece of our 
 
 ## Excercise 1 - Variables
 
-As with any modern programming language, variables are basically input values that can change (hence their _variable_ nature), 
+As with any modern programming language, variables are basically input values that can change (hence their _variable_ nature),
 depending on conditions or on information passed in to the program.
 
 Like many other approaches to this concept, Terraform employs *type constraints*,
@@ -163,22 +164,23 @@ Refer to the Terraform [documentation](https://www.terraform.io/language/express
 
 Let's begin the exercise:
 
-1. `mkdir tf_workspace` # _Here we are creating your workspace_
-1. `cd tf_workspace` # _Here we are changing your working directory to your workspace_
-1. <pre class='clickable-code'># _Here we are creating the variables.tf file_
-echo -e """ variable "my_map" {
-  type = map(string)
-  default = {
-    "mykey" = "myvar"
+1. Create your workspace: `mkdir tf_workspace`
+1. Change your working directory to your workspace: `cd tf_workspace`
+1. Create the variables.tf file<br />
+  <pre class='clickable-code'>
+  echo -e ''' variable "my_map" {
+    type = map(string)
+    default = {
+      "mykey" = "myvar"
+    }
   }
-}
-""" | tee variables.tf
-</pre>
+  ''' | tee variables.tf
+  </pre>
 
 As noted before, this variables file defines our inputs. 
 
-> ℹ️ You don't have to name the file _variables.tf_, but it is good practice to do so.
-
+???+ note ":information_source:"
+    You don't have to name the file _variables.tf_, but it is good practice to do so.
 
 Now that we have our variables defined, let's create our outputs file.
 
@@ -190,19 +192,22 @@ the application as a whole.
 
 Outputs are meant to be picked up by other Terraform code or even other automation. 
 
-These outputs are recorded int the Terraform [state](https://www.terraform.io/language/state).
+These outputs are recorded in the Terraform [state](https://www.terraform.io/language/state).
 
 Let's begin the exercise:
 
-1. <pre class='clickable-code'># _Here we are creating the output file_
-echo -e """ output my_map_dot_notation {
-  value = var.my_map.mykey
-}
-output my_map_key_notation {
-  value = var.my_map["mykey"]
-}
-""" | tee outputs.tf
-</pre>
+1. Create the output file<br />
+  <pre class='clickable-code'>
+  echo -e ''' output my_map_dot_notation {
+    value = var.my_map.mykey
+  }
+  output my_map_key_notation {
+    value = var.my_map["mykey"]
+  }
+  ''' | tee outputs.tf
+  </pre>
+
+  Now that your outputs are defined, let's proceed to the last exercise.
 
 ## Exercise 3 - Terraform Plan & Apply
 
@@ -212,5 +217,14 @@ We are merely acquainting you with Terraform inputs and outputs.
 
 Let's begin the exercise:
 
-1. `terraform plan` # Here we are generating the execution plan
-1. `terraform apply` # Here we are applying the execution plan
+1. Initialize the terraform workspace: `terraform init`<br />
+   During this phase, Terraform will download any externally-sourced modules<br />
+   and initialize any referenced providers. It will also fail early should any<br />
+   problems arise during initialization, e.g. authentication errors, syntax errors, etc.<br />
+   We aren't working with anything mentioned above, so the init will pass with flying colors.
+1. Generate the execution plan: `terraform plan`
+    
+1. Apply the execution plan: `terraform apply`
+
+
+
