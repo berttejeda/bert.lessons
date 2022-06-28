@@ -222,9 +222,20 @@ Let's begin the exercise:
    and initialize any referenced providers. It will also fail early should any<br />
    problems arise during initialization, e.g. authentication errors, syntax errors, etc.<br />
    We aren't working with anything mentioned above, so the init will pass with flying colors.
-1. Generate the execution plan: `terraform plan`
-    
-1. Apply the execution plan: `terraform apply`
+1. Generate the execution plan: `terraform plan`<br />
+   Because we're only creating outputs, your execution plan should be simple, and similar to:<br />
+   > Changes to Outputs:
+    + my_map_dot_notation = "myvar"
+    + my_map_key_notation = "myvar"
+1. Apply the execution plan: `terraform apply`<br />
+   Answer 'yes' when prompted<br />
+   Again, terraform didn't actually create or destroy anything.<br />
+   Thus, your output should be simple, and similar to:<br />
+   > Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
+    Outputs:
 
+    my_map_dot_notation = "myvar"
+    my_map_key_notation = "myvar"
 
+Now that you've completed exercise, this concludes the lab.
