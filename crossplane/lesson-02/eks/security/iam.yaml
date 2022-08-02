@@ -1,0 +1,123 @@
+---
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: Role
+metadata:
+  name: cp-iam-k8s-role
+  labels:
+    role: controlplane
+spec:
+  forProvider:
+    description: Main AWS role for an EKS cluster
+    assumeRolePolicyDocument: |-
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": [
+                        "eks.amazonaws.com"
+                    ]
+                },
+                "Action": [
+                    "sts:AssumeRole"
+                ]
+            }
+        ]
+      }
+    tags:
+      - key: name
+        value: cp-iam-k8s-role
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: RolePolicyAttachment
+metadata:
+  name: cp-iam-k8s-rolepolicyattachment
+spec:
+  forProvider:
+    policyArn: arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
+    roleNameRef:
+      name: cp-iam-k8s-role
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: Role
+metadata:
+  name: cp-iam-k8s-worker-role
+  labels:
+    role: nodegroup
+spec:
+  forProvider:
+    description: Main AWS role for an EKS cluster workers
+    assumeRolePolicyDocument: |-
+      {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": [
+                        "ec2.amazonaws.com"
+                    ]
+                },
+                "Action": [
+                    "sts:AssumeRole"
+                ]
+            },
+            {
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": [
+                        "eks.amazonaws.com"
+                    ]
+                },
+                "Action": [
+                    "sts:AssumeRole"
+                ]
+            }            
+        ]
+      }
+    tags:
+      - key: name
+        value: cp-iam-k8s-worker-role
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: RolePolicyAttachment
+metadata:
+  name: cp-iam-k8s-worker-node-rolepolicyattachment
+spec:
+  forProvider:
+    policyArn: arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+    roleNameRef:
+      name: cp-iam-k8s-worker-role
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: RolePolicyAttachment
+metadata:
+  name: cp-iam-k8s-worker-cni-rolepolicyattachment
+spec:
+  forProvider:
+    policyArn: arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+    roleNameRef:
+      name: cp-iam-k8s-worker-role
+  providerConfigRef:
+    name: awsconfig    
+---
+apiVersion: iam.aws.crossplane.io/v1beta1
+kind: RolePolicyAttachment
+metadata:
+  name: cp-iam-k8s-worker-ecr-rolepolicyattachment
+spec:
+  forProvider:
+    policyArn: arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+    roleNameRef:
+      name: cp-iam-k8s-worker-role
+  providerConfigRef:
+    name: awsconfig

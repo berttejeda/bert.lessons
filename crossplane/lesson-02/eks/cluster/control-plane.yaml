@@ -1,0 +1,35 @@
+---
+apiVersion: eks.aws.crossplane.io/v1beta1
+kind: Cluster
+metadata:
+  name: cp-k8s-cluster
+  labels:
+    environment: "dev"
+spec:
+  forProvider:
+    region: us-east-1
+    roleArnRef:
+      name: cp-iam-k8s-role
+    resourcesVpcConfig:
+      endpointPrivateAccess: true
+      endpointPublicAccess: true
+      subnetIdRefs:
+        - name: cp-k8s-private-1a
+        - name: cp-k8s-private-1b
+      securityGroupIdRefs:
+        - name: cp-k8s-cluster-workers-sg
+    version: "1.22"
+    logging:
+      clusterLogging:
+      - enabled: false
+        types:
+        - api
+        - audit
+        - authenticator
+        - controllerManager
+        - scheduler    
+  writeConnectionSecretToRef:
+    name: cp-k8s-connection
+    namespace: default
+  providerConfigRef:
+    name: awsconfig

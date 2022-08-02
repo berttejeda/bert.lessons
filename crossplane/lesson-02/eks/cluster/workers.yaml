@@ -1,0 +1,25 @@
+apiVersion: eks.aws.crossplane.io/v1alpha1
+kind: NodeGroup
+metadata:
+  name: cp-k8s-workers
+  labels:
+    environment: "dev"
+    role: "workers"
+spec:
+  forProvider:
+    region: us-east-1
+    clusterNameRef:
+      name: cp-k8s-cluster   
+    instanceTypes:
+      - t3.small
+    nodeRoleRef:
+      name: cp-iam-k8s-worker-role
+    subnetRefs:
+      - name: cp-k8s-private-1a
+      - name: cp-k8s-private-1b
+    scalingConfig:
+      desiredSize: 1
+      maxSize: 3
+      minSize: 1
+  providerConfigRef:
+    name: awsconfig

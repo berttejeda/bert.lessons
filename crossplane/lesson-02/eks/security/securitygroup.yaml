@@ -1,0 +1,19 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: SecurityGroup
+metadata:
+  name: cp-k8s-cluster-workers-sg
+spec:
+  forProvider:
+    region: us-east-1
+    vpcIdRef:
+      name: cp-k8s-vpc
+    groupName: cp-k8s-cluster-workers-sg
+    description: Cluster communication with worker nodes
+    egress:
+      - fromPort: 0
+        toPort: 0
+        ipProtocol: "-1"
+        ipRanges:
+          - cidrIp: "0.0.0.0/0"
+  providerConfigRef:
+    name: awsconfig

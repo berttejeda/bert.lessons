@@ -1,0 +1,109 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: Subnet
+metadata:
+  name: cp-k8s-public-1a
+spec:
+  forProvider:
+    region: us-east-1
+    availabilityZone: us-east-1a
+    cidrBlock: 10.0.0.0/24
+    mapPublicIPOnLaunch: true
+    vpcIdRef:
+      name: cp-k8s-vpc
+    tags:
+    - key: Environment
+      value: Dev
+    - key: Name
+      value: cp-k8s-public-1a
+    - key: Owner
+      value: crossplane
+    - key: kubernetes.io/cluster/cp-k8s-cluster
+      value: shared
+    - key: kubernetes.io/role/elb
+      value: "1"
+    - key: access
+      value: "public"          
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: Subnet
+metadata:
+  name: cp-k8s-public-1b
+spec:
+  forProvider:
+    region: us-east-1
+    availabilityZone: us-east-1b
+    cidrBlock: 10.0.1.0/24
+    mapPublicIPOnLaunch: true
+    vpcIdRef:
+      name: cp-k8s-vpc
+    tags:
+    - key: Environment
+      value: Dev
+    - key: Name
+      value: cp-k8s-public-1b
+    - key: Owner
+      value: crossplane
+    - key: kubernetes.io/cluster/cp-k8s-cluster
+      value: shared
+    - key: kubernetes.io/role/elb
+      value: "1"
+    - key: access
+      value: "public"
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: Subnet
+metadata:
+  name: cp-k8s-private-1a
+spec:
+  forProvider:
+    region: us-east-1
+    availabilityZone: us-east-1a
+    cidrBlock: 10.0.2.0/24
+    vpcIdRef:
+      name: cp-k8s-vpc
+    tags:
+    - key: Environment
+      value: Dev
+    - key: Name
+      value: cp-k8s-private-1a
+    - key: Owner
+      value: crossplane
+    - key: kubernetes.io/cluster/cp-k8s-cluster
+      value: shared
+    - key: kubernetes.io/role/internal-elb
+      value: "1"
+    - key: access
+      value: "private"      
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: Subnet
+metadata:
+  name: cp-k8s-private-1b
+spec:
+  forProvider:
+    region: us-east-1
+    availabilityZone: us-east-1b
+    cidrBlock: 10.0.3.0/24
+    vpcIdRef:
+      name: cp-k8s-vpc
+    tags:
+    - key: Environment
+      value: Dev
+    - key: Name
+      value: cp-k8s-private-1b
+    - key: Owner
+      value: crossplane
+    - key: kubernetes.io/cluster/cp-k8s-cluster
+      value: shared
+    - key: kubernetes.io/role/internal-elb
+      value: "1"
+    - key: access
+      value: "private"      
+  providerConfigRef:
+    name: awsconfig

@@ -1,0 +1,55 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: RouteTable
+metadata:
+  name: cp-k8s-private-rte-tbl
+spec:
+  forProvider:
+    region: us-east-1
+    routes:
+      - destinationCidrBlock: 0.0.0.0/0
+        gatewayIdRef:
+          name: cp-k8s-igw
+    associations:
+      - subnetIdRef:
+          name: cp-k8s-private-1a
+      - subnetIdRef:
+          name: cp-k8s-private-1b
+    tags:
+    - key: Environment
+      value: dev
+    - key: Owner
+      value: crossplane
+    - key: Name
+      value: cp-k8s-private-rte-tbl          
+    vpcIdRef:
+      name: cp-k8s-vpc
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: RouteTable
+metadata:
+  name: cp-k8s-public-rte-tbl
+spec:
+  forProvider:
+    region: us-east-1
+    routes:
+      - destinationCidrBlock: 0.0.0.0/0
+        gatewayIdRef:
+          name: cp-k8s-igw
+    associations:
+      - subnetIdRef:
+          name: cp-k8s-public-1a
+      - subnetIdRef:
+          name: cp-k8s-public-1b
+    tags:
+    - key: Environment
+      value: dev
+    - key: Owner
+      value: crossplane
+    - key: Name
+      value: cp-k8s-public-rte-tbl          
+    vpcIdRef:
+      name: cp-k8s-vpc
+  providerConfigRef:
+    name: awsconfig
