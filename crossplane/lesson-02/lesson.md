@@ -86,3 +86,4 @@ to provision the compute resources you need to deploy your workloads.
 
 Here's a github gist for doing the above in Terraform: 
 [https://gist.github.com/zparnold/dba28e5022e8c029919e0be3c38c64cc](https://gist.github.com/zparnold/dba28e5022e8c029919e0be3c38c64cc)
+
