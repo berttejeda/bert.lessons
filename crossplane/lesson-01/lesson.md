@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/berttejeda/bert.lessons/main/crossplane/lesson-01/assets/k8s_swiss_army_knife_natdog.png?raw=true" alt="K8s Swiss Army Knife on a Nuke" width="200"/>
+
 # Forward
 
 Thank you for taking the time to start reading this educational material.
@@ -31,7 +33,7 @@ https://www.padok.fr/en/blog/kubernetes-infrastructure-crossplane
 - Was created by Upbound, and was first released in December of 2018
 - It was accepted as an incubating project by the CNCF (Cloud Native Computing Foundation) in 2020
 
-# Features
+# CrossPlane Features
 
 From the [website](crossplane.io):
 
