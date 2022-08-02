@@ -1,20 +1,20 @@
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: VPC
 metadata:
-  name: cp-k8s-vpc
+  name: cp-demo-k8s-vpc
 spec:
   forProvider:
-    region: us-east-1
+    region: us-east-2
     cidrBlock: 10.0.0.0/16
     enableDnsSupport: true
     enableDnsHostNames: true
     instanceTenancy: default
     tags:
     - key: Environment
-      value: dev
+      value: Demo
     - key: Owner
       value: crossplane
     - key: Name
-      value: cp-k8s-vpc
+      value: cp-demo-k8s-vpc
   providerConfigRef:
     name: awsconfig

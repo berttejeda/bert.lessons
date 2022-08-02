@@ -1,23 +1,23 @@
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: Subnet
 metadata:
-  name: cp-k8s-public-1a
+  name: cp-demo-k8s-public-1a
 spec:
   forProvider:
-    region: us-east-1
-    availabilityZone: us-east-1a
+    region: us-east-2
+    availabilityZone: us-east-2a
     cidrBlock: 10.0.0.0/24
     mapPublicIPOnLaunch: true
     vpcIdRef:
-      name: cp-k8s-vpc
+      name: cp-demo-k8s-vpc
     tags:
     - key: Environment
-      value: Dev
+      value: Demo
     - key: Name
-      value: cp-k8s-public-1a
+      value: cp-demo-k8s-public-1a
     - key: Owner
       value: crossplane
-    - key: kubernetes.io/cluster/cp-k8s-cluster
+    - key: kubernetes.io/cluster/cp-demo-k8s-cluster
       value: shared
     - key: kubernetes.io/role/elb
       value: "1"
@@ -29,23 +29,23 @@ spec:
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: Subnet
 metadata:
-  name: cp-k8s-public-1b
+  name: cp-demo-k8s-public-1b
 spec:
   forProvider:
-    region: us-east-1
-    availabilityZone: us-east-1b
+    region: us-east-2
+    availabilityZone: us-east-2b
     cidrBlock: 10.0.1.0/24
     mapPublicIPOnLaunch: true
     vpcIdRef:
-      name: cp-k8s-vpc
+      name: cp-demo-k8s-vpc
     tags:
     - key: Environment
-      value: Dev
+      value: Demo
     - key: Name
-      value: cp-k8s-public-1b
+      value: cp-demo-k8s-public-1b
     - key: Owner
       value: crossplane
-    - key: kubernetes.io/cluster/cp-k8s-cluster
+    - key: kubernetes.io/cluster/cp-demo-k8s-cluster
       value: shared
     - key: kubernetes.io/role/elb
       value: "1"
@@ -57,22 +57,22 @@ spec:
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: Subnet
 metadata:
-  name: cp-k8s-private-1a
+  name: cp-demo-k8s-private-1a
 spec:
   forProvider:
-    region: us-east-1
-    availabilityZone: us-east-1a
+    region: us-east-2
+    availabilityZone: us-east-2a
     cidrBlock: 10.0.2.0/24
     vpcIdRef:
-      name: cp-k8s-vpc
+      name: cp-demo-k8s-vpc
     tags:
     - key: Environment
-      value: Dev
+      value: Demo
     - key: Name
-      value: cp-k8s-private-1a
+      value: cp-demo-k8s-private-1a
     - key: Owner
       value: crossplane
-    - key: kubernetes.io/cluster/cp-k8s-cluster
+    - key: kubernetes.io/cluster/cp-demo-k8s-cluster
       value: shared
     - key: kubernetes.io/role/internal-elb
       value: "1"
@@ -84,22 +84,22 @@ spec:
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: Subnet
 metadata:
-  name: cp-k8s-private-1b
+  name: cp-demo-k8s-private-1b
 spec:
   forProvider:
-    region: us-east-1
-    availabilityZone: us-east-1b
+    region: us-east-2
+    availabilityZone: us-east-2b
     cidrBlock: 10.0.3.0/24
     vpcIdRef:
-      name: cp-k8s-vpc
+      name: cp-demo-k8s-vpc
     tags:
     - key: Environment
-      value: Dev
+      value: Demo
     - key: Name
-      value: cp-k8s-private-1b
+      value: cp-demo-k8s-private-1b
     - key: Owner
       value: crossplane
-    - key: kubernetes.io/cluster/cp-k8s-cluster
+    - key: kubernetes.io/cluster/cp-demo-k8s-cluster
       value: shared
     - key: kubernetes.io/role/internal-elb
       value: "1"

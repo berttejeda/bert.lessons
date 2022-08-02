@@ -1,50 +1,50 @@
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: InternetGateway
 metadata:
-  name: cp-k8s-igw
+  name: cp-demo-k8s-igw
 spec:
   forProvider:
-    region: us-east-1
+    region: us-east-2
     vpcIdRef:
-      name: cp-k8s-vpc
+      name: cp-demo-k8s-vpc
     tags:
     - key: Environment
-      value: Dev
+      value: Demo
     - key: Owner
       value: crossplane
     - key: Name
-      value: cp-k8s-igw 
+      value: cp-demo-k8s-igw 
   providerConfigRef:
     name: awsconfig
 ---
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: NATGateway
 metadata:
-  name: cp-k8s-private-natgateway-1a
+  name: cp-demo-k8s-private-natgateway-1a
 spec:
   forProvider:
-    region: us-east-1
+    region: us-east-2
     connectivityType: private
     subnetIdRef:
-      name: cp-k8s-private-1a
+      name: cp-demo-k8s-private-1a
     tags:
       - key: Name
-        value: cp-k8s-private-natgateway-1a
+        value: cp-demo-k8s-private-natgateway-1a
   providerConfigRef:
     name: awsconfig
 ---
 apiVersion: ec2.aws.crossplane.io/v1beta1
 kind: NATGateway
 metadata:
-  name: cp-k8s-private-natgateway-1b
+  name: cp-demo-k8s-private-natgateway-1b
 spec:
   forProvider:
-    region: us-east-1
+    region: us-east-2
     connectivityType: private
     subnetIdRef:
-      name: cp-k8s-private-1b
+      name: cp-demo-k8s-private-1b
     tags:
       - key: Name
-        value: cp-k8s-private-natgateway-1b
+        value: cp-demo-k8s-private-natgateway-1b
   providerConfigRef:
     name: awsconfig
