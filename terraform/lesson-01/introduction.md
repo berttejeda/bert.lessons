@@ -116,21 +116,24 @@ to reflect the latest available from the [Hashicorp website](https://www.terrafo
 
 ### Mac OSX
 
-For Mac OSX I recommend you install terraform using [homebrew](https://docs.brew.sh/Installation).
+For Mac OSX, I recommend you install terraform using [homebrew](https://docs.brew.sh/Installation).
 
 Simply run `brew install terraform`.
+
+Let's move on to core concepts.
 
 ## Core concepts
 
 ### Order of Operations
 
 - The major elements of Terraform are: 
-    - Inputs variables
+    - Input variables
     - Resources
     - Data sources (A.K.A read-only resources)
     - Providers
     - Modules
-- To deploy a Terraform project, you must first organize these elements in configuration code (.tf files)
+    - Output variables
+- To deploy a Terraform project, you must first organize such elements in configuration code (.tf files)
 
 That said, the order of operations for deploying infrastructure via terraform is as follows:
 
@@ -224,18 +227,22 @@ Let's begin the exercise:
    We aren't working with anything mentioned above, so the init will pass with flying colors.
 1. Generate the execution plan: `terraform plan`<br />
    Because we're only creating outputs, your execution plan should be simple, and similar to:<br />
-   > Changes to Outputs:
+   <pre class='non-clickable-code'>
+   Changes to Outputs:
     + my_map_dot_notation = "myvar"
     + my_map_key_notation = "myvar"
+   </pre>
 1. Apply the execution plan: `terraform apply`<br />
    Answer 'yes' when prompted<br />
    Again, terraform didn't actually create or destroy anything.<br />
    Thus, your output should be simple, and similar to:<br />
-   > Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+   <pre class='non-clickable-code'>
+   Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
     Outputs:
 
     my_map_dot_notation = "myvar"
     my_map_key_notation = "myvar"
+  </pre>
 
 Now that you've completed exercise, this concludes the lab.
