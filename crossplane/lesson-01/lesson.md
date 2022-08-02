@@ -8,6 +8,7 @@ cost in your journey to learning [CrossPlane](crossplane.io).
 # Lesson 01
 
 This lesson will cover the following exercises:
+
 - Initialize a local Kubernetes cluster using [kind](https://kind.sigs.k8s.io) 
 - Install CrossPlane on a local cluster using [helm](https://helm.sh/)
 - Connect the installation to an AWS account
