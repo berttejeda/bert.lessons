@@ -87,3 +87,16 @@ to provision the compute resources you need to deploy your workloads.
 Here's a github gist for doing the above in Terraform: 
 [https://gist.github.com/zparnold/dba28e5022e8c029919e0be3c38c64cc](https://gist.github.com/zparnold/dba28e5022e8c029919e0be3c38c64cc)
 
+Although the underlying actions are identical, the implementation is not as self-service oriented as with CrossPlane.
+
+Here's why in a nutshell:
+- CrossPlane leverages Kubernetes, which ships with RBAC
+- Kubernetes has a rich ecosystem of custom resources, integrations, tooling, etc
+  which all play nice with CrossPlane, because it's a Kubernetes add-on after all
+
+The only downside I see so far is that it's not as widely known as tools like Terraform, and so 
+there are not as many examples on the internet hive mind as one would like.
+
+Still, I am increasingly seeing documentation available from AWS official sources, so I believe
+it's only a matter of time before CrossPlane really takes off.
+
