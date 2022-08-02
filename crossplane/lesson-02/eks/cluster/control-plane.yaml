@@ -4,7 +4,7 @@ kind: Cluster
 metadata:
   name: cp-demo-k8s-cluster
   labels:
-    environment: "dev"
+    environment: "demo"
 spec:
   forProvider:
     region: us-east-2

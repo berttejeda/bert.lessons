@@ -3,7 +3,7 @@ kind: NodeGroup
 metadata:
   name: cp-demo-k8s-workers
   labels:
-    environment: "dev"
+    environment: "demo"
     role: "workers"
 spec:
   forProvider:
