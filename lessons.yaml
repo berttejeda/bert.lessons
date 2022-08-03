@@ -1,15 +1,15 @@
 topics:
   ansible:
     lessons:
-      - name: Introduction
+      - name: Lesson 01 - Introduction
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/ansible/lesson-01/introduction.md
   crossplane:
     lessons:
-      - name: Introduction
+      - name: Lesson 01 - Introduction
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/crossplane/lesson-01/lesson.md
-      - name: EKS
+      - name: Lesson 02 - EKS
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/crossplane/lesson-02/lesson.md
   terraform:
     lessons:
-      - name: Introduction
+      - name: Lesson 01 - Introduction
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/terraform/lesson-01/introduction.md
