@@ -90,8 +90,9 @@ Here's a github gist for doing the above in Terraform:
 Although the underlying actions are identical, the implementation is not as self-service oriented as with CrossPlane.
 
 Here's why in a nutshell:
+
 - CrossPlane leverages Kubernetes, which ships with RBAC
-- Kubernetes has a rich ecosystem of custom resources, integrations, tooling, etc
+- Kubernetes has a rich ecosystem of custom resources, integrations, tooling, etc<br />
   which all play nice with CrossPlane, because it's a Kubernetes add-on after all
 
 The only downside I see so far is that it's not as widely known as tools like Terraform, and so 
