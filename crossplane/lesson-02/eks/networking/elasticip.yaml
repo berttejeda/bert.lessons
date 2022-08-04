@@ -1,0 +1,25 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: Address
+metadata:
+  name: cp-demo-k8s-eip-1
+  labels:
+    name: cp-demo-k8s-eip-1
+spec:
+  forProvider:
+    region: us-east-2
+    domain: vpc
+  providerConfigRef:
+    name: awsconfig
+---
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: Address
+metadata:
+  name: cp-demo-k8s-eip-2
+  labels:
+    name: cp-demo-k8s-eip-2
+spec:
+  forProvider:
+    region: us-east-2
+    domain: vpc
+  providerConfigRef:
+    name: awsconfig 

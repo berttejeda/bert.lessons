@@ -61,6 +61,8 @@ clear
 1. Verify that these resources are Synced and Ready: `kubectl get securitygroup`
 1. Create the subnet resources: `kubectl apply -f networking/subnet.yaml`
 1. Verify Synced and Ready: `kubectl get subnet`
+1. Create the Elastic IP resources: `kubectl apply -f networking/elasticip.yaml`
+1. Verify Synced and Ready: `kubectl get address`
 1. Create the Internet and Nat gateway resources: `kubectl apply -f networking/gateway.yaml`
 1. Verify that these resources are Synced and Ready:
     - `kubectl get internetgateway`

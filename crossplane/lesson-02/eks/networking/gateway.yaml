@@ -24,9 +24,14 @@ metadata:
 spec:
   forProvider:
     region: us-east-2
+    # allocationIdRef:
+    #   name: cp-demo-k8s-eip    
     connectivityType: private
     subnetIdRef:
       name: cp-demo-k8s-private-1a
+    allocationIdSelector:
+      matchLabels:
+        name: cp-demo-k8s-eip-1
     tags:
       - key: Name
         value: cp-demo-k8s-private-natgateway-1a
@@ -43,6 +48,9 @@ spec:
     connectivityType: private
     subnetIdRef:
       name: cp-demo-k8s-private-1b
+    allocationIdSelector:
+      matchLabels:
+        name: cp-demo-k8s-eip-2     
     tags:
       - key: Name
         value: cp-demo-k8s-private-natgateway-1b
