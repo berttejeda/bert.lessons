@@ -20,10 +20,10 @@ This lesson will cover the following exercises:
         - VPC
         - IAM Roles
         - Security Groups
+        - Subnet
         - VPC Internet Gateway
         - VPC NAT Gateway
         - Route Table
-        - Subnet
         - Cluster
         - EKS Node Group
 
@@ -59,14 +59,14 @@ clear
 1. Verify the state of the VPC resource: `kubectl get vpc`
 1. Create the security groups for the EKS cluster and Node Groups: `kubectl apply -f security/securitygroup.yaml`
 1. Verify that these resources are Synced and Ready: `kubectl get securitygroup`
+1. Create the subnet resources: `kubectl apply -f networking/subnet.yaml`
+1. Verify Synced and Ready: `kubectl get subnet`
 1. Create the Internet and Nat gateway resources: `kubectl apply -f networking/gateway.yaml`
 1. Verify that these resources are Synced and Ready:
     - `kubectl get internetgateway`
     - `kubectl get natgateway`
 1. Create the IaM role and attach appropriate policies for our EKS cluster: `kubectl apply -f security/iam.yaml`
 1. Verify Synced and Ready: `kubectl get role`
-1. Create the subnet resources: `kubectl apply -f networking/subnet.yaml`
-1. Verify Synced and Ready: `kubectl get subnet`
 1. Create the eks control plane: `kubectl apply -f cluster/control-plane.yaml`
 1. Verify Synced and Ready: `kubectl get cluster.eks.aws.crossplane.io/cp-demo-k8s-cluster`
 1. Create the EKS worker node group: `kubectl apply -f cluster/workers.yaml`
