@@ -27,17 +27,21 @@ Below are several means of installing the `kind` binary
 
 ## Install on Linux
 
-export KIND_VERSION=v0.14.0 
+<pre class='clickable-code'>
+export KIND_VERSION=v0.14.0
 curl -fLo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/${KIND_VERSION}/kind-linux-amd64" \
 && chmod +x ./kind \
 && mv ./kind /usr/local/bin/kind
+</pre>
 
 ## Install on OSX (ARM)
 
+<pre class='clickable-code'>
 export KIND_VERSION=v0.14.0 
 curl -fLo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/${KIND_VERSION}/kind-darwin-arm64" \
 && chmod +x ./kind \
 && mv ./kind /usr/local/bin/kind
+</pre>
 
 ## Install on Windows
 
