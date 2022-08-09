@@ -13,6 +13,8 @@ topics:
     lessons:
       - name: Lesson 01 - Introduction
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/kubernetes/lesson-01/lesson.md    
+      - name: Lesson 02 - Hello World
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/kubernetes/lesson-02/lesson.md
   terraform:
     lessons:
       - name: Lesson 01 - Introduction
