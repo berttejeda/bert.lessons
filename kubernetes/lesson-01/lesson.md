@@ -36,6 +36,10 @@ curl -fLo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/${KI
 
 ## Install on OSX (ARM)
 
+If you have [homebrew](https://docs.brew.sh/) installed, you can simply run `brew install kind`.
+
+Otherwise you download via `curl`:
+
 <pre class='clickable-code'>
 export KIND_VERSION=v0.14.0 
 curl -fLo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/${KIND_VERSION}/kind-darwin-arm64" \
@@ -49,10 +53,9 @@ On Windows, we can use [chocolatey](https://chocolatey.org/) to install: `choco 
 
 ## Manually download binary
 
-You can manually download the kind binary from https://github.com/kubernetes-sigs/kind/releases to get started
+You can manually download the kind binary from [https://github.com/kubernetes-sigs/kind/releases](https://github.com/kubernetes-sigs/kind/releases) to get started
 
 # Create a local Kubernetes cluster
-
 
 For those of you not familiar with the tool, it's used for running local Kubernetes clusters using Docker containers as worker _nodes_.
 
@@ -91,3 +94,33 @@ We'll then set our _KUBECONFIG_ environmental variable: `export KUBECONFIG=$(ls 
 and finally set our active Kubernetes context: `kubectl config use-context kind-k8s-demo`
 
 You should now be ready to start playing with Kubernetes.
+
+Let's install `helm`.
+
+# Install the helm binary
+
+Below are several means of installing the `helm` binary
+
+## Install on Linux
+
+<pre class='clickable-code'>
+export HELM_VERSION=v3.9.2
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
+&& chmod +x get_helm.sh && DESIRED_VERSION=$HELM_VERSION ./get_helm.sh
+</pre>
+
+## Install on OSX (ARM)
+
+If you have [homebrew](https://docs.brew.sh/) installed, you can simply run `brew install helm`.
+
+## Install on Windows
+
+On Windows, we can use [chocolatey](https://chocolatey.org/) to install: `choco install helm`
+
+## Manually download binary
+
+You can manually download the kind binary from [https://github.com/helm/helm/releases](https://github.com/helm/helm/releases) to get started
+
+# End
+
+This concludes the Lab 01.
