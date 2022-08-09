@@ -15,8 +15,8 @@ spec:
     nodeRoleRef:
       name: cp-demo-iam-k8s-worker-role
     subnetRefs:
-      - name: cp-demo-k8s-public-1a
-      - name: cp-demo-k8s-public-1b
+      - name: cp-demo-k8s-private-1a
+      - name: cp-demo-k8s-private-1b
     scalingConfig:
       desiredSize: 1
       maxSize: 3
