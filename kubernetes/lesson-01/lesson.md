@@ -19,9 +19,36 @@ operations and scaling of containerized applications.
 
 It can run anywhere where Linux runs and supports on-premise, hybrid and public cloud deployments.
 
-# Create a local Kubernetes cluster
+# Install the kind binary
 
 We'll be using [kind](https://kind.sigs.k8s.io) to initialize our demo cluster.
+
+Below are several means of installing the `kind` binary
+
+## Install on Linux
+
+export KIND_VERSION=v0.14.0 
+curl -fLo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/${KIND_VERSION}/kind-linux-amd64" \
+&& chmod +x ./kind \
+&& mv ./kind /usr/local/bin/kind
+
+## Install on OSX (ARM)
+
+export KIND_VERSION=v0.14.0 
+curl -fLo ./kind "https://github.com/kubernetes-sigs/kind/releases/download/${KIND_VERSION}/kind-darwin-arm64" \
+&& chmod +x ./kind \
+&& mv ./kind /usr/local/bin/kind
+
+## Install on Windows
+
+On Windows, we can use [chocolatey](https://chocolatey.org/) to install: `choco install kind`
+
+## Manually download binary
+
+You can manually download the kind binary from https://github.com/kubernetes-sigs/kind/releases to get started
+
+# Create a local Kubernetes cluster
+
 
 For those of you not familiar with the tool, it's used for running local Kubernetes clusters using Docker containers as worker _nodes_.
 
