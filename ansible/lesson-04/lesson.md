@@ -99,7 +99,7 @@ echo -e """
 - Use the CLI to see recorded playbooks<br />
 `ara playbook list`
 - In a separate terminal instance, start the local ARA development server<br />
-`ara-manage runserver`
+`ARA_ALLOWED_HOSTS="['*']" ara-manage runserver 0.0.0.0:8000`
 - Navigate to the reporting interface at http://127.0.0.1:8000 and review the playbook reports
 
 # Recording playbooks without an API server
