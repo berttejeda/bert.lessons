@@ -9,6 +9,16 @@ topics:
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/crossplane/lesson-01/lesson.md
       - name: Lesson 02 - EKS
         url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/crossplane/lesson-02/lesson.md
+  docker:
+    lessons:
+      - name: Lesson 01 - Introduction
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/docker/lesson-01/lesson.md
+      - name: Lesson 02 - Building Images
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/docker/lesson-02/lesson.md
+      - name: Lesson 03 - Environment, Build Arguments and Layers
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/docker/lesson-03/lesson.md
+      - name: Lesson 04 - Container Foundations
+        url: https://raw.githubusercontent.com/berttejeda/bert.lessons/main/docker/lesson-04/lesson.md
   kubernetes:
     lessons:
       - name: Lesson 01 - Introduction
